@@ -1,0 +1,21 @@
+This repository contains R implementation of the algorithms proposed in "A Multitask Multiple Kernel Learning Algorithm for Survival Analysis with Application to Cancer Biology", which is appearing in the Proceedings of the 36th International Conference on Machine Learning (ICML 2019).
+
+run_survival_random_forest_tcga.R shows how to replicate random forest experiments on TCGA cohorts.
+run_survival_svm_tcga.R shows how to replicate support vector machine experiments on TCGA cohorts.
+run_survival_group_lasso_mkl_tcga.R shows how to replicate group Lasso MKL experiments on TCGA cohorts.
+run_survival_group_lasso_mtmkl_tcga.R shows how to replicate group Lasso multitask MKL experiments on TCGA cohorts.
+
+Path2MSurv methods
+------------------
+* survival_helper.R => helper functions
+* solve_survival_svm_cplex.R => survival support vector machine solver using CPLEX optimization software
+* single_kernel_survival_train.R => training procedure for survival support vector machine
+* single_kernel_survival_test.R => test procedure for survival support vector machine
+* group_lasso_multiple_kernel_survival_train.R => training procedure for group Lasso MKL
+* group_lasso_multiple_kernel_survival_test.R => test procedure for group Lasso MKL
+* group_lasso_multitask_multiple_kernel_survival_train.R => training procedure for group Lasso multitask MKL
+* group_lasso_multitask_multiple_kernel_survival_test.R => test procedure for group Lasso multitask MKL
+
+If you use any of the algorithms implemented in this repository, please cite the following paper:
+
+Onur Dereli, Ceyda Oguz, and Mehmet Gonen. A Multitask Multiple Kernel Learning Algorithm for Survival Analysis with Application to Cancer Biology. Proceedings of the 36th International Conference on Machine Learning (ICML 2019), Long Beach, California, USA, 2019.
