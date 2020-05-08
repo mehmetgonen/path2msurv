@@ -18,10 +18,8 @@ group_lasso_multitask_multiple_kernel_survival_train <- function(Km, y, delta, p
     start_eta <- eta
 
     eta_new <- rep(0, P)
-    for (t in 1:T) {
-      for (m in 1:P) {
-        eta_new[m] <- eta_new[m] + eta[m] * sqrt(t(models[[t]]$alpha) %*% Km[[t]][,,m] %*% models[[t]]$alpha)
-      }
+    for (m in 1:P) {
+      eta_new[m] <- eta[m] * sqrt(sum(sapply(1:T, function(t) {t(models[[t]]$alpha) %*% Km[[t]][,,m] %*% models[[t]]$alpha})))
     }
     eta <- eta_new
     eta <- eta / sum(eta)
